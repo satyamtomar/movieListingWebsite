@@ -4,6 +4,12 @@ let itemsPerPage = 10;
 let search=''
 let totalItems=0;
 let listItems=[];
+//  In this example, each grid item is a clickable element. When a grid item is clicked, the modal appears. The modal can be closed by clicking the 'X' button in the top right of the modal, or by clicking outside the modal.
+ 
+ 
+ 
+ 
+ 
 // fetch('https://jsonplaceholder.typicode.com/todos?limit=5') // replace with your API endpoint
 //   .then(response => {
 //     if (!response.ok) {
@@ -100,6 +106,48 @@ div.appendChild(titleDiv);
 div.appendChild(imgDiv);
 div.appendChild(description);
 gridContainer.appendChild(div);
+
+
+//  var gridItems1 = document.querySelectorAll(".grid-item");
+//  for (var i = 0; i < gridItems1.length; i++) {
+   div.addEventListener("click", function() {
+     console.log('clickke');
+     fetch(`https://www.omdbapi.com/?i=${item.imdbID}&apikey=ebbc68a5`)
+     .then(res => {
+       if (!res.ok) {
+         throw new Error('There is some error');
+       }
+       return res.json();
+     })
+     .then(data => {
+      //  showme(data);
+      console.log(data,'sshihih');
+       let modalContent=document.getElementById('modal-content');
+       var modalImage=document.createElement('img');
+       modalImage.src = data.Poster;
+
+// Optionally, you can also set other attributes like alt, width, height, etc.
+modalImage.alt = "Descriptive text";
+modalImage.className='modal-item-img';
+// modalImage.height='400px';
+// modalImage.width='200px';
+       var modalDescription=document.createElement('span');
+       modalDescription.textContent=data.Plot;
+       modalContent.appendChild(modalImage);
+       modalContent.appendChild(modalDescription);
+  
+       modal1.style.display = "block";
+       
+     })
+     .catch(error => {
+       console.error('Error:', error);
+     });
+
+   });
+//  }
+ 
+ 
+
     });
     displayPagination();
   })
@@ -160,8 +208,26 @@ gridContainer.appendChild(div);
   });
   paginationContainer.appendChild(nextButton);
  }
-  
-  
+ 
+ var modal1 = document.getElementById("myModal");
+ var span1 = document.getElementsByClassName("close")[0];
+ 
+ span1.onclick = function() {
+  modal1.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal1) 
+  {
+    modal1.style.display = "none";
+    // <span class="close">&times;</span>
+
+    let modalContent=document.getElementById('modal-content');
+    modalContent.innerHTML='';
+    let modalSpan=document.createElement('span');
+
+  }
+}
 //   displayGridItems();
 //   displayPagination();
   
