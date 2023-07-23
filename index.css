@@ -130,7 +130,10 @@ gap: 5px;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
   }
-  
+  .grid-item:hover
+  {
+   cursor: pointer;
+  }
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
