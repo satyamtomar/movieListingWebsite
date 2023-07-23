@@ -33,7 +33,7 @@ body
   }
   
   .grid-item {
-    background-color: #efe9e9;
+    background-color: #f3ecec;
     padding: 25px;
     height: 220px;
     width: 220px;
@@ -102,10 +102,52 @@ body
     flex-direction: column;
   }
 
-  
+  .titleDiv
+  {
+    font-size: 15px;
+    padding-bottom: 4px;
+  }
 .item-desc
 {
-  font-size: 20px;
-  gap: 2px;
-
+  font-size: 15px;
+  /* gap: 2px; */
+display: flex;
+flex-direction: row;
+justify-content: end;
+margin-top: 5px;
+gap: 5px;
 }
+
+
+@media screen and (max-width: 1100px) {
+    /* Your CSS rules go here. These will apply to screens that are 400px wide or less. */
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+        gap: 5px; /* Adds a gap between grid items */
+        /* padding: 10px 10px; */
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb( 18,18,18 );
+      }
+    
+  }
+
+
+  @media screen and (max-width: 400px) {
+    /* Your CSS rules go here. These will apply to screens that are 400px wide or less. */
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates a 3-column grid */
+        gap: 5px; /* Adds a gap between grid items */
+        /* padding: 10px 10px; */
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb( 18,18,18 );
+      }
+    
+  }

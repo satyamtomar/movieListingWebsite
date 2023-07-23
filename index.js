@@ -48,6 +48,7 @@ document.getElementById('search-btn').addEventListener('click', function() {
     data = json;
     console.log(data,'dddd');
     totalItems=data.totalResults;
+    // if(totalIte)
     listItems.push(...data.Search)
     console.log(totalItems,listItems,'ddd');
     // localStorage.setItem('myList',JSON.stringify(...data));
@@ -104,6 +105,7 @@ gridContainer.appendChild(div);
   })
   .catch(error => {
     console.error('There has been a problem with your fetch operation:', error);
+    alert('No movie found or too many results...Please enter a valid movie name');
   });
 
   }
