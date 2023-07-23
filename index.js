@@ -63,6 +63,11 @@ document.getElementById('search-btn').addEventListener('click', function() {
       let div = document.createElement('div');
     //   div.textContent = item;
       div.className = 'grid-item';
+      let titleDiv=document.createElement('div');
+      titleDiv.className='titleDiv';
+      let title=document.createElement('span');
+title.textContent=item.Title;
+titleDiv.appendChild(title);
       let imgDiv=document.createElement('div');
       imgDiv.className='grid-image';
       let imgElement = document.createElement("img");
@@ -80,18 +85,17 @@ imgDiv.appendChild(imgElement);
 let description=document.createElement('div');
 description.className='item-desc';
 
-let type=document.createElement('span');
-type.textContent=item.Type;
 
 let year=document.createElement('span');
 year.textContent=item.Year;
 
-let title=document.createElement('span');
-title.textContent=item.Title;
+let type=document.createElement('span');
+type.textContent=item.Type;
 
-description.appendChild(title);
+// description.appendChild(title);
 description.appendChild(type);
 description.appendChild(year);
+div.appendChild(titleDiv);
 div.appendChild(imgDiv);
 div.appendChild(description);
 gridContainer.appendChild(div);
