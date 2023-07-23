@@ -1,0 +1,103 @@
+
+body
+{
+    background-color: rgb( 18,18,18 );
+}
+.container
+{
+    background: rgb( 18,18,18 );
+    margin-top: auto;
+    margin-bottom: auto;
+    /* padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.06);
+    width: 800px;
+    transition: all 0.3s ease; */
+    /* height: 100%; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates a 3-column grid */
+    gap: 30px; /* Adds a gap between grid items */
+    /* padding: 10px 10px; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb( 18,18,18 );
+  }
+  
+  .grid-item {
+    background-color: #efe9e9;
+    padding: 20px;
+    height: 220px;
+    width: 220px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+
+  .search-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #search-input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #search-btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: #6C757D;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #search-btn:hover {
+    background-color: #5A6268;
+  }
+  
+
+  .pagination-btn {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  .pagination-btn.active {
+    background-color: #aaddaa;
+  }
+  
+  .pagination-btn.disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+
+  #pagination-container
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .grid-item-img
+  {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
